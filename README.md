@@ -2,7 +2,7 @@
 
 配方： ℞ **`chemical-kb`**
 
-[Rime](https://rime.im)化學中文名詞輸入方案
+[Rime](https://rime.im) 化學中文名詞輸入方案
 
 ## 示範
 
