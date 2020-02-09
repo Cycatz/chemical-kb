@@ -4,7 +4,7 @@
 
 [Rime](https://rime.im) 化學中文名詞輸入方案
 
-## 示範
+## 示例
 
 ![](assets/example.gif)
 
