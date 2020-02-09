@@ -1,0 +1,77 @@
+# Rime schema
+# encoding: utf-8
+schema:
+  schema_id: chemical-kb
+  name: "化學鍵盤"
+  author: Cycatz
+  description: 一個快速打出化學名詞的鍵盤 
+  version: "1.0"
+
+engine:
+  processors:
+    - key_binder
+    - speller
+    - punctuator
+    - selector
+    - navigator
+    - express_editor
+  segmentors:
+    - abc_segmentor
+    - punct_segmentor
+  translators:
+    - punct_translator
+    - table_translator
+
+speller:
+  auto_select: true
+
+
+translator:
+  enable_encoder: false
+  dictionary: chemical-kb
+
+punctuator:
+  half_shape: &symtable
+    "!": [一, 苯]
+    "@": [二, 疊]
+    "#": 三
+    "$": 四
+    "%": [五, 正, 酯]
+    "^": 六
+    "&": 七 
+    "*": 八
+    "(": 九
+    ")": [十, 氨, 胺]
+    "1": 甲
+    "2": 乙
+    "3": 丙
+    "4": 丁 
+    "5": 戊
+    "6": 己
+    "7": 庚
+    "8": 辛
+    "9": 壬
+    "0": 癸
+    "N": 酸
+    "A": 醚
+    "E": [過, 根, 酐]
+    "R": [鹼, 聚, 基, 腈]
+    "U": [異, 亞]
+    "H": 次
+    "T": 醇
+    "J": 烷
+    "W": 酮
+    "Z": [反, 酚]
+    "V": [新, 硝, 醯, 烯]
+    "C": [化, 合, 環]
+    "F": [炔, 醛]
+    "G": [水, 順]
+
+  full_shape: *symtable
+
+key_binder:
+  bindings:
+    - {accept: semicolon, send: KP_2, when: has_menu}
+    - {accept: apostrophe, send: KP_3, when: has_menu}
+    - {accept: comma, send: KP_4, when: has_menu}
+    - {accept: period, send: KP_5, when: has_menu}
